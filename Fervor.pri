@@ -1,5 +1,3 @@
-QT += core gui webkit network
-
 isEmpty(FV_APP_NAME) {
 	warning("Fervor: falling back to application name '$$TARGET'")
 	DEFINES += FV_APP_NAME=\\\"$$TARGET\\\"
@@ -16,35 +14,26 @@ isEmpty(FV_APP_VERSION) {
 	DEFINES += FV_APP_VERSION=\\\"$$FV_APP_VERSION\\\"
 }
 
-# Unit tests
-#DEFINES += FV_DEBUG=1
-#DEPENDPATH += "$$PWD/tests/"
-#INCLUDEPATH += "$$PWD/tests/"
-#CONFIG += qtestlib
-#SOURCES += tests/fvversioncomparatortest.cpp
-#HEADERS += tests/fvversioncomparatortest.h
-
 DEPENDPATH += "$$PWD"
 INCLUDEPATH += "$$PWD"
 
-SOURCES += fvupdatewindow.cpp \
-	fvupdater.cpp \
-	fvversioncomparator.cpp \
-	fvplatform.cpp \
-	fvignoredversions.cpp \
-	fvavailableupdate.cpp \
-	fvupdateconfirmdialog.cpp
+SOURCES += fervor/fvupdatewindow.cpp \
+        fervor/fvupdater.cpp \
+        fervor/fvversioncomparator.cpp \
+        fervor/fvplatform.cpp \
+        fervor/fvignoredversions.cpp \
+        fervor/fvavailableupdate.cpp \
+        fervor/fvupdateconfirmdialog.cpp
 
-HEADERS += fvupdatewindow.h \
-	fvupdater.h \
-	fvversioncomparator.h \
-	fvplatform.h \
-	fvignoredversions.h \
-	fvavailableupdate.h \
-	fvupdateconfirmdialog.h
+HEADERS += fervor/fvupdatewindow.h \
+        fervor/fvupdater.h \
+        fervor/fvversioncomparator.h \
+        fervor/fvplatform.h \
+        fervor/fvignoredversions.h \
+        fervor/fvavailableupdate.h \
+        fervor/fvupdateconfirmdialog.h
 
-FORMS += fvupdatewindow.ui \
-	fvupdateconfirmdialog.ui
+FORMS += fervor/fvupdatewindow.ui \
+        fervor/fvupdateconfirmdialog.ui
 
-TRANSLATIONS += fervor_lt.ts
 CODECFORTR = UTF-8
