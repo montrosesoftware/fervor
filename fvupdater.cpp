@@ -87,7 +87,7 @@ void FvUpdater::installTranslator()
 	QTranslator translator;
 	QString locale = QLocale::system().name();
 	translator.load(QString("fervor_") + locale);
-	QTextCodec::setCodecForTr(QTextCodec::codecForName("utf8"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("utf8"));
 	qApp->installTranslator(&translator);
 }
 
